@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmurgia- <mmurgia-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: maialen <maialen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 13:18:52 by mmurgia-          #+#    #+#             */
-/*   Updated: 2022/06/16 13:06:05 by mmurgia-         ###   ########.fr       */
+/*   Updated: 2022/06/17 17:57:10 by maialen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,12 +72,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 char	*ft_strjoin(char *s1, char *s2)
 {
 	unsigned int		i;
-	unsigned int		j;
+	int					j;
 	char				*s3;
 
 	i = 0;
-	j = 0;
-	printf("S2: %s\n", s2);
+	j = -1;
 	if (!s1)
 	{
 		s1 = (char *)malloc(1 * sizeof(char));
@@ -93,12 +92,8 @@ char	*ft_strjoin(char *s1, char *s2)
 		s3[i] = s1[i];
 		i++;
 	}
-	while (s2[j])
-	{
+	while (s2[++j])
 		s3[i + j] = s2[j];
-		j++;
-	}
 	s3[i + j] = '\0';
-	printf("S3: %s\n", s3);
 	return (s3);
 }
