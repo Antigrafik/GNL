@@ -6,7 +6,7 @@
 /*   By: mmurgia- <mmurgia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 13:19:18 by mmurgia-          #+#    #+#             */
-/*   Updated: 2022/06/16 13:22:26 by mmurgia-         ###   ########.fr       */
+/*   Updated: 2022/06/21 12:27:50 by mmurgia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_read(int fd, char *str);
 
 /* get_next_line_utils.c */
 size_t	ft_strlen(const char *str);
-char	*ft_strchr(char *str);
+char	*ft_strchr(char *str, int c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char *s1, char *s2);
 
