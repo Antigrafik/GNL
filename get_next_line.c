@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmurgia- <mmurgia-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: maialen <maialen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 13:16:26 by mmurgia-          #+#    #+#             */
-/*   Updated: 2022/06/21 12:54:53 by mmurgia-         ###   ########.fr       */
+/*   Updated: 2022/06/23 11:01:00 by maialen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,15 @@ char	*ft_read(int fd, char *str)
 	while (rd != 0 && (!ft_strchr(str, '\n')))
 	{
 		rd = read(fd, tmp, BUFFER_SIZE);
-		if (rd == -1 || rd == 0)
+		if (rd == -1)
 		{
 			free(tmp);
 			return (0);
 		}
 	tmp[rd] = '\0';
 	str = ft_strjoin(str, tmp);
-	printf("str despues: %s\n", str);
 	}
-	printf("str antes free: %s\n", str);
 	free(tmp);
-	printf("str free: %s\n", str);
 	return (str);
 }
 
@@ -86,7 +83,7 @@ char	*ft_save_line(char *str)
 		return (0);
 	i++;
 	count = 0;
-	while (str[i] != '\0')
+	while (str[i])
 		tmp[count++] = str[i++];
 	tmp[count] = '\0';
 	free(str);
