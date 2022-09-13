@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maialen <maialen@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mmurgia- <mmurgia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 13:16:26 by mmurgia-          #+#    #+#             */
-/*   Updated: 2022/06/23 11:01:00 by maialen          ###   ########.fr       */
+/*   Updated: 2022/09/12 13:19:23 by mmurgia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_read(int fd, char *str)
 {
-	int		rd;
+	ssize_t	rd;
 	char	*tmp;
 
 	tmp = malloc(sizeof (char) * (BUFFER_SIZE + 1));
@@ -29,8 +29,8 @@ char	*ft_read(int fd, char *str)
 			free(tmp);
 			return (0);
 		}
-	tmp[rd] = '\0';
-	str = ft_strjoin(str, tmp);
+		tmp[rd] = '\0';
+		str = ft_strjoin(str, tmp);
 	}
 	free(tmp);
 	return (str);
@@ -42,9 +42,9 @@ char	*ft_get_line(char *str)
 	int		i;
 
 	i = 0;
-	if (!str)
+	if (!str[i])
 		return (0);
-	while (str[i] && str[i] != 0)
+	while (str[i] != '\n' && str[i])
 		i++;
 	line = (char *)malloc (sizeof(char) * (i + 2));
 	if (!line)
@@ -73,9 +73,9 @@ char	*ft_save_line(char *str)
 	i = 0;
 	while (str[i] && str[i] != '\n')
 		i++;
-	if (!str)
+	if (!str[i])
 	{
-		free (str);
+		free(str);
 		return (0);
 	}
 	tmp = (char *)malloc(sizeof (char) * (ft_strlen(str) - i + 1));
@@ -99,13 +99,13 @@ char	*get_next_line(int fd)
 		return (0);
 	str = ft_read(fd, str);
 	if (!str)
-		return (0);
+		return (NULL);
 	line = ft_get_line(str);
 	str = ft_save_line(str);
 	return (line);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	int		fd;
 	char	*file;
@@ -119,7 +119,14 @@ int	main(void)
 	printf("%s", file);
 	file = get_next_line(fd);
 	printf("%s", file);
+	file = get_next_line(fd);
+	printf("%s", file);
+	file = get_next_line(fd);
+	printf("%s", file);
+	file = get_next_line(fd);
+	printf("%s", file);
 	free(file);
 	close(fd);
 	return (0);
 }
+ */

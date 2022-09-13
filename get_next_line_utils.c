@@ -6,7 +6,7 @@
 /*   By: mmurgia- <mmurgia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 13:18:52 by mmurgia-          #+#    #+#             */
-/*   Updated: 2022/06/21 12:28:15 by mmurgia-         ###   ########.fr       */
+/*   Updated: 2022/09/12 10:29:18 by mmurgia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,14 +57,15 @@ char	*ft_strjoin(char *s1, char *s2)
 	}
 	if (!s1 || !s2)
 		return (NULL);
-	s3 = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 1));
+	s3 = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
 	if (!s3)
 		return (NULL);
-	while (s1[++i])
-		s3[i] = s1[i];
-	while (s2[j])
+	if (s1)
+		while (s1[++i] != '\0')
+			s3[i] = s1[i];
+	while (s2[j] != '\0')
 		s3[i++] = s2[j++];
-	s3[i] = '\0';
+	s3[ft_strlen(s1) + ft_strlen(s2)] = '\0';
 	free(s1);
 	return (s3);
 }

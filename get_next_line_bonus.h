@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maialen <maialen@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mmurgia- <mmurgia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 13:19:18 by mmurgia-          #+#    #+#             */
-/*   Updated: 2022/06/28 10:43:39 by maialen          ###   ########.fr       */
+/*   Updated: 2022/07/20 11:01:01 by mmurgia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <fcntl.h>
 # include <stdio.h>
 # include <limits.h>
+
+/* # define BUFFER_SIZE 5 */
 
 /* get_next_line.c */
 char	*get_next_line(int fd);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maialen <maialen@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mmurgia- <mmurgia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 13:16:26 by mmurgia-          #+#    #+#             */
-/*   Updated: 2022/06/28 10:45:30 by maialen          ###   ########.fr       */
+/*   Updated: 2022/09/12 13:19:11 by mmurgia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ char	*get_next_line(int fd)
 	int		fd2;
 	char	*file;
 
-	fd = open("file.txt", O_RDONLY);
+	fd = open("file3.txt", O_RDONLY);
 	fd2 = open("file2.txt", O_RDONLY);
 	file = get_next_line(fd);
 	printf("%s", file);
@@ -133,5 +133,4 @@ char	*get_next_line(int fd)
 	close(fd);
 	close(fd2);
 	return (0);
-}
- */
+} */

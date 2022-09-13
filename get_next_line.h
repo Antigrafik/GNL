@@ -6,7 +6,7 @@
 /*   By: mmurgia- <mmurgia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 13:19:18 by mmurgia-          #+#    #+#             */
-/*   Updated: 2022/06/21 12:27:50 by mmurgia-         ###   ########.fr       */
+/*   Updated: 2022/09/12 10:08:44 by mmurgia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <stdio.h>
+
+/* # define BUFFER_SIZE 5 */
 
 /* get_next_line.c */
 char	*get_next_line(int fd);
